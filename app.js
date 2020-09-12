@@ -61,4 +61,10 @@ function verifyToken(req, res, next) {
 
 }
 
-app.listen(80, () => console.log('Server started on port 80'));
+let port = process.env.PORT;
+if (port == null || port == '') {
+    port = 8000;
+}
+
+app.listen(port, () => console.log('Server started on port 80'));
+
